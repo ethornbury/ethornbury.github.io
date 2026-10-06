@@ -1,0 +1,13 @@
+{{- /*
+  A partial is a reusable snippet. baseof.html includes this with {{ partial "header.html" . }}
+  Layout (title left, menu right, wrapping on narrow screens) is in style.css under "Header".
+*/ -}}
+<header class="site-header">
+  <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
+  {{/* The links come from [menus] in hugo.toml */}}
+  <nav class="site-nav">
+    {{ range site.Menus.main }}
+      <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

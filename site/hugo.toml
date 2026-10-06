@@ -1,0 +1,19 @@
+# Site-wide settings. Anything under [params] is available in templates
+# as .Site.Params.<name>, e.g. {{ .Site.Params.subtitle }}.
+baseURL = "https://ethornbury.github.io/"
+locale = "en-us"
+title = "Emer Thornbury"
+
+# We don't use tags or categories, so don't generate pages for them.
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Emer Thornbury - Works"
+
+# The header menu. Add another [[menus.main]] block for each new link;
+# weight sets the order (lower comes first).
+[menus]
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 10
